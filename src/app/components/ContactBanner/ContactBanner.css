@@ -1,0 +1,113 @@
+/* components/ContactBanner/ContactBanner.css */
+
+.contact-banner-wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+/* Tombol Utama (Toggle) */
+.banner-toggle-btn {
+  background: #00296b;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.banner-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.5);
+}
+
+/* Panel Informasi */
+.contact-panel {
+  width: 320px;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e7eb;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: panelFadeIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes panelFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.panel-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.panel-close-btn {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+.panel-close-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.panel-content p {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.panel-content a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4f46e5;
+  text-decoration: none;
+}
+.panel-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  .contact-banner-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-panel {
+    width: calc(100vw - 4rem);
+    max-width: 320px;
+  }
+}

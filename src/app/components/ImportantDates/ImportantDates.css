@@ -1,0 +1,109 @@
+/* components/ImportantDates/ImportantDates.css */
+
+.dates-section {
+  background-color: #f8f9fa;
+  padding: 5rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dates-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dates-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dates-subtitle {
+  color: #6c757d;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.dates-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00296b;
+  margin: 0;
+}
+
+.dates-grid {
+  display: grid;
+  /* Grid responsif, akan menjadi 2 kolom di layar sedang dan 1 di layar kecil */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.date-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.date-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-calendar-top {
+  background-color: #00296b;
+  color: white;
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card-day {
+  font-size: clamp(4rem, 10vw, 5rem); /* Font responsif */
+  font-weight: 700;
+  color: #00296b;
+  line-height: 1;
+  padding: 1.5rem 0;
+}
+
+.card-info {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  margin-top: auto; /* Mendorong info ke bawah */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #00296b;
+  margin: 0 0 0.5rem 0;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Gaya Cerdas untuk Tanggal yang Sudah Lewat --- */
+.date-card.is-past {
+  opacity: 0.6;
+  background-color: #f1f2f6; /* Warna sedikit lebih abu-abu */
+}
+
+.date-card.is-past:hover {
+  transform: translateY(0); /* Matikan efek hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.date-card.is-past .card-day {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  color: #9ca3af;
+}
+
+.date-card.is-past .card-calendar-top {
+  background-color: #6b7280;
+}

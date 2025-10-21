@@ -1,0 +1,79 @@
+/* src/Pages/Home/components/Countdown/Countdown.css */
+
+.countdown-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  background-color: #00296b;
+  background-image: radial-gradient(circle at 10% 20%, rgba(101, 78, 163, 0.2), transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(78, 115, 163, 0.2), transparent 40%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.countdown-container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.countdown-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.countdown-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* <-- INI YANG AKAN KITA UBAH NANTI */
+}
+
+.countdown-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.countdown-value {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.5rem;
+}
+
+.countdown-separator {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .countdown-section { padding: 3rem 1rem; }
+  .countdown-timer { gap: 1rem; flex-wrap: wrap; }
+  .countdown-block { min-width: 75px; padding: 0.75rem; }
+  .countdown-separator { transform: translateY(-5px); }
+}

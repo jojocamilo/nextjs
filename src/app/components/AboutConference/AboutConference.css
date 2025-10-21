@@ -1,0 +1,158 @@
+/* components/AboutConference/AboutConference.css */
+
+.about-conf-section {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.about-conf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-conf-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-conf-subtitle {
+  color: #6c757d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.about-conf-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00296b;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Layout utama dua kolom */
+.about-conf-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Kolom kiri lebih lebar */
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* --- Konten Utama (Kiri) --- */
+.about-conf-main-content .main-description {
+  font-size: 1.1rem;
+  color: #374151;
+  line-height: 1.8;
+  margin-top: 0;
+}
+
+.about-conf-main-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00296b;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.about-conf-main-content .theme-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* Grid untuk Topik */
+.topics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.topic-tag {
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.topic-tag:hover {
+  background-color: #e3e6ff;
+  color: #00296b;
+}
+
+/* --- Sidebar (Kanan) --- */
+.about-conf-sidebar {
+  position: sticky;
+  top: 100px; /* Jarak "menempel" dari atas layar */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-block {
+  background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* === TAMBAHKAN BLOK BARU INI === */
+/* Ini adalah bagian terpenting */
+.info-block div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* <-- KUNCI UTAMANYA: Paksa semua item rata kiri */
+}
+
+.info-block .address-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #00296b;
+  /* Perkecil jarak antar baris secara drastis */
+  line-height: 1.4; 
+}
+
+.info-icon {
+  flex-shrink: 0;
+  background-color: #e3e6ff;
+  color: #00296b;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-block h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00296b;
+}
+
+.info-block p {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* --- Responsif --- */
+@media (max-width: 992px) {
+  .about-conf-layout {
+    grid-template-columns: 1fr; /* Tumpuk kolom menjadi satu */
+  }
+  .about-conf-sidebar {
+    position: static; /* Hilangkan efek 'sticky' di mobile */
+    margin-top: 3rem;
+  }
+}
