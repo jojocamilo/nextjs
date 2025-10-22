@@ -141,9 +141,9 @@ const CardHomeFeatures = () => {
         </header>
         <div className="card-home-features-grid-large">
           <Card
-            src="/assets/images/acmit2020.jpg"
-            title="ACMIT 2025"
-            description="Offer personalized workout plans with video tutorials and AI form correction for optimal fitness results."
+            src="/assets/images/landing/Bapak.jpg"
+            title="General Manager People Partner and Growth PT Aplikanusa Lintasarta"
+            description="Integrating Emerging Technologies with Human Capital for Sustainable Transformation"
             className="card-home-features-large"
             buttonHref="/project1"
           />
@@ -161,7 +161,7 @@ const CardHomeFeatures = () => {
             isGif={true} // Ini akan tetap berfungsi
           />
           <Card
-            src="/assets/images/landing/OniBoy1.webp" // Ini sekarang akan otomatis terdeteksi sebagai gambar
+            src="/assets/images/landing/Bapak.jpg" // Ini sekarang akan otomatis terdeteksi sebagai gambar
             title="Arcadia"
             description="Immersive digital experiences that blend creativity with cutting-edge technology for lasting impact."
             className="card-home-features-xsmall2"
