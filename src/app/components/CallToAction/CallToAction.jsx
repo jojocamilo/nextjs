@@ -45,7 +45,7 @@ const CallToAction = () => {
   // };
 
   const handleContactClick = () => {
-    window.open('https://github.com/JackWhiters/', '_blank');
+    window.open('https://docs.google.com/forms/d/1zIDMRuY1fnYWHa5LwhdTrN9wQt_HJXsqWMP5DOPe9w8/edit', '_blank');
   };
 
   return (
