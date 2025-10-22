@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import './Features.css';
 
 // Prop isGif tetap ada untuk backward compatibility
-const Card = ({ src, title, description, className, buttonHref, isGif }) => {
+const Card = ({ src, Nama, title, description, className, buttonHref, isGif }) => {
   const [isClient, setIsClient] = useState(false);
   const wrapperRef = useRef(null);
   const videoRef = useRef(null);
@@ -84,44 +84,41 @@ const Card = ({ src, title, description, className, buttonHref, isGif }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* ============================================= */}
-      {/* PERUBAHAN DIMULAI DI SINI */}
-      {/* ============================================= */}
-      
-      {/* 3. Gunakan variabel isImage untuk render <img> atau <video> */}
-      {isImage ? (
-        <img src={src} alt={title} className="card-home-features-video" />
-      ) : isClient ? (
-        <video
-          ref={videoRef}
-          src={src}
-          loop
-          muted
-          className="card-home-features-video"
-          onError={e => console.error('Error loading video:', e)}
-        />
-      ) : null}
-
-      {/* ============================================= */}
-      {/* AKHIR DARI PERUBAHAN */}
-      {/* ============================================= */}
-
-      {/* Content tetap sama */}
-      <div className="card-home-features-content">
-        <div>
-          <h3 className="card-home-features-title">{title}</h3>
-          {description && (
-            <p className="card-home-features-description">{description}</p>
-          )}
+      <div className="card-home-features-layout">
+        <div className="card-home-features-image-container">
+          {isImage ? (
+            <img src={src} alt={title} className="card-home-features-image" />
+          ) : isClient ? (
+            <video
+              ref={videoRef}
+              src={src}
+              loop
+              muted
+              className="card-home-features-image"
+              onError={e => console.error('Error loading video:', e)}
+            />
+          ) : null}
         </div>
-        <a
-          href={buttonHref}
-          className="card-home-features-button"
-          aria-label={`View ${title} project`}
-        >
-          View Project
-          <ArrowUpRight className="card-home-features-button-icon" size={16} />
-        </a>
+
+        <div className="card-home-features-content">
+          <div className="card-home-features-text">
+            {Nama && (
+              <h2 className="card-home-features-name">{Nama}</h2>
+            )}
+            <h3 className="card-home-features-title">{title}</h3>
+            {description && (
+              <p className="card-home-features-description">{description}</p>
+            )}
+          </div>
+          <a
+            href={buttonHref}
+            className="card-home-features-button"
+            aria-label={`View ${title} project`}
+          >
+            View Project
+            <ArrowUpRight className="card-home-features-button-icon" size={16} />
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -142,16 +139,17 @@ const CardHomeFeatures = () => {
         <div className="card-home-features-grid-large">
           <Card
             src="/assets/images/landing/Bapak.jpg"
+            Nama="Dr. Nashrudin Ismail, S.T., MM."
             title="General Manager People Partner and Growth PT Aplikanusa Lintasarta"
             description="Integrating Emerging Technologies with Human Capital for Sustainable Transformation"
             className="card-home-features-large"
-            buttonHref="/project1"
+            buttonHref="https://www.linkedin.com/in/nashrudin-ismail-93022a33/"
           />
         </div>
-        <div className="card-home-features-grid-feature">
+        {/* <div className="card-home-features-grid-feature">
           {/* ... (card lainnya tidak berubah) ... */}
-        </div>
-        <div className="card-home-features-grid-special">
+        {/* </div> */}
+        {/* <div className="card-home-features-grid-special">
           <Card
             src="/assets/animations/gifs/Ringsblack.gif"
             title="Arcadia"
@@ -168,7 +166,7 @@ const CardHomeFeatures = () => {
             buttonHref="/project6"
             // Tidak perlu isGif={true} di sini, tapi jika ditambahkan pun tidak masalah
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );

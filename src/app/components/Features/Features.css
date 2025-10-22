@@ -103,7 +103,7 @@
    =================================== */
 .card-home-features-section {
   position: relative;
-  background: var(--putih);
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
   padding: var(--spacing-3xl) 0;
   min-height: 100vh;
   overflow: hidden;
@@ -272,6 +272,11 @@
   margin-bottom: var(--spacing-2xl);
 }
 
+.card-home-features-text {
+  flex: 1;
+  padding-right: var(--spacing-xl);
+}
+
 .card-home-features-grid-feature {
   position: relative;
   z-index: 10;
@@ -319,17 +324,19 @@
 .card-home-features-wrapper {
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
   height: 100%;
   border-radius: var(--border-radius-3xl);
-  background: rgba(10, 10, 10, 0.6);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all var(--transition-normal);
   cursor: pointer;
+}
+
+.card-home-features-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
 /* Enhanced Hover Effects */
@@ -368,18 +375,21 @@
 /* ===================================
    Video Elements - Enhanced
    =================================== */
-.card-home-features-video {
-  position: absolute;
-  inset: 0;
+.card-home-features-image-container {
+  flex: 0 0 40%;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-3xl) 0 0 var(--border-radius-3xl);
+}
+
+.card-home-features-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: inherit;
-  z-index: 0;
   transition: transform var(--transition-slow);
 }
 
-.card-home-features-wrapper:hover .card-home-features-video {
+.card-home-features-wrapper:hover .card-home-features-image {
   transform: scale(1.05);
 }
 
@@ -401,18 +411,16 @@
    Card Content - Enhanced Layout
    =================================== */
 .card-home-features-content {
-  position: absolute;
-  inset: 0;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: var(--spacing-xl);
-  z-index: 2;
   background: linear-gradient(
     135deg,
-    rgba(10, 10, 10, 0.4) 0%,
-    rgba(10, 10, 10, 0.2) 50%,
-    rgba(10, 10, 10, 0.6) 100%
+    rgba(30, 41, 59, 0.7) 0%,
+    rgba(15, 23, 42, 0.8) 50%,
+    rgba(30, 41, 59, 0.9) 100%
   );
   border-radius: inherit;
 }
@@ -420,15 +428,39 @@
 /* ===================================
    Typography - Enhanced Styling
    =================================== */
-.card-home-features-title {
-  font-size: var(--font-size-2xl);
+.card-home-features-name {
+  font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
-  color: rgba(255, 255, 255, 0.95);
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
+  background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   margin-bottom: var(--spacing-md);
   line-height: var(--line-height-tight);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: inline-block;
+}
+
+.card-home-features-name::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #60a5fa, transparent);
+  border-radius: 2px;
+}
+
+.card-home-features-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: none;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-normal);
   transition: color var(--transition-normal);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -442,15 +474,39 @@
 }
 
 .card-home-features-description {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
-  margin-bottom: auto;
-  transition: color var(--transition-normal);
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(139, 92, 246, 0.1)
+  );
+  border-radius: var(--border-radius-lg);
+  backdrop-filter: blur(8px);
+  border-left: 3px solid var(--color-primary);
+  transition: all var(--transition-normal);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-home-features-wrapper:hover .card-home-features-description {
+  color: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.15),
+    rgba(139, 92, 246, 0.15)
+  );
+  border-left-color: var(--color-primary-light);
+  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15), 
+              0 3px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .card-home-features-wrapper:hover .card-home-features-description {
