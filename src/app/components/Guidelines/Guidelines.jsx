@@ -15,6 +15,24 @@ const guidelinesData = [
     <>
       <div className="fee-item"><p>Swiss German University (SGU) Students</p><strong>IDR 950,000</strong></div>
       <div className="fee-item"><p>Others</p><strong>IDR 1,150,000</strong></div>
+      <div className="bank-details">
+        <h4>Bank Account Details</h4>
+        <div className="bank-info">
+          <div className="bank-name">Virtual Account Bank Mandiri</div>
+          <div className="account-details">
+            <div>
+              <div className="account-label">Account Name</div>
+              <div className="account-value">LPPM Univ. Swiss German</div>
+            </div>
+            <div>
+              <div className="account-label">Account Number</div>
+              <div className="account-value">
+                <span className="account-number">8945900000111222</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )},
 ];
