@@ -6,7 +6,7 @@ import { useDarkMode } from '../../contexts/DarkModeContext';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+// import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import AudioIndicator from '../AudioIndicator/AudioIndicator';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import styles from './Navbar.module.scss';
@@ -122,10 +122,6 @@ const Navbar = () => {
                 isAudioPlaying={isAudioPlaying}
                 toggleAudioIndicator={toggleAudioIndicator}
               />
-              <DarkModeToggle
-                toggleDarkMode={toggleDarkMode}
-                isDarkMode={isDarkMode}
-              />
             </div>
           </div>
         </div>
@@ -166,10 +162,6 @@ const Navbar = () => {
               <AudioIndicator
                 isAudioPlaying={isAudioPlaying}
                 toggleAudioIndicator={toggleAudioIndicator}
-              />
-              <DarkModeToggle
-                toggleDarkMode={toggleDarkMode}
-                isDarkMode={isDarkMode}
               />
               <motion.button
                 className={`${styles.mobileMenuButton} ${
