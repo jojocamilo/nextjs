@@ -39,7 +39,7 @@ const guidelinesData = [
 
 const Guidelines = () => {
   return (
-    <section className="guidelines-section">
+    <section id="guidelines-section" className="guidelines-section">
       <div className="guidelines-container">
         {/* Kolom Kiri yang 'Menempel' */}
         <div className="guidelines-sticky-nav">

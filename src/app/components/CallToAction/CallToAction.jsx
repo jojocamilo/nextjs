@@ -45,11 +45,12 @@ const CallToAction = () => {
   // };
 
   const handleContactClick = () => {
-    window.open('https://docs.google.com/forms/d/1zIDMRuY1fnYWHa5LwhdTrN9wQt_HJXsqWMP5DOPe9w8/edit', '_blank');
+    window.open('https://forms.gle/ZdVX3UoB4FVaBiT2A ', '_blank');
   };
 
   return (
     <section
+      id="call-for-paper"
       ref={sectionRef}
       className={`cta-section ${isVisible ? 'visible' : ''}`}
     >

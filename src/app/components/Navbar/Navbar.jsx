@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 // import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
-import AudioIndicator from '../AudioIndicator/AudioIndicator';
+// AudioIndicator removed
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import styles from './Navbar.module.scss';
 
@@ -15,7 +15,7 @@ const Navbar = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  
 
   const navbarRef = useRef(null);
 
@@ -34,19 +34,17 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   }, []);
 
-  const toggleAudioIndicator = () => {
-    setIsAudioPlaying(prev => !prev);
-  };
+  
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/blog', label: 'About' },
-    { href: '/portfolio', label: 'Countdown' },
-    { href: '/progress', label: 'Gallery' },
-    { href: '/guestbook', label: 'Guideline' },
-    { href: '/about', label: 'Timeline' },
-    { href: '/testing', label: 'Topics' },
-    { href: '/testing2', label: 'Call for Paper' },
+    { href: '#call-for-paper', label: 'Call for Paper' },
+  { href: '/', label: 'Home' },
+  { href: '#about-conference', label: 'About' },
+  { href: '#countdown-section', label: 'Countdown' },
+    { href: '#ScrollToFeatures', label: 'Presenters' },
+    { href: '#guidelines-section', label: 'Guideline' },
+    { href: '#dates-section', label: 'Timeline' },
+    { href: '#topics-section', label: 'Topics' },
   ];
 
   const navbarVariants = {
@@ -106,6 +104,16 @@ const Navbar = () => {
                 <div key={item.href} className={styles.navItem}>
                   <Link
                     href={item.href}
+                    onClick={e => {
+                      // If this is an in-page anchor, smooth-scroll instead of navigating
+                      if (item.href && item.href.startsWith('#')) {
+                        e.preventDefault();
+                        const el = document.querySelector(item.href);
+                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Close mobile menu if open
+                        setIsMobileMenuOpen(false);
+                      }
+                    }}
                     className={`${styles.navLink} ${
                       isDarkMode ? styles.navLinkDark : styles.navLinkLight
                     }`}
@@ -117,12 +125,7 @@ const Navbar = () => {
             </nav>
 
             {/* Right Side Controls */}
-            <div className={styles.rightControls}>
-              <AudioIndicator
-                isAudioPlaying={isAudioPlaying}
-                toggleAudioIndicator={toggleAudioIndicator}
-              />
-            </div>
+            <div className={styles.rightControls} />
           </div>
         </div>
       </motion.header>
@@ -159,10 +162,6 @@ const Navbar = () => {
 
             {/* Mobile Controls */}
             <div className={styles.mobileControls}>
-              <AudioIndicator
-                isAudioPlaying={isAudioPlaying}
-                toggleAudioIndicator={toggleAudioIndicator}
-              />
               <motion.button
                 className={`${styles.mobileMenuButton} ${
                   isDarkMode

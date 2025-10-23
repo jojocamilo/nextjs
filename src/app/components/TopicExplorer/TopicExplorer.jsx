@@ -37,7 +37,7 @@ const TopicExplorer = () => {
     : topicsData.filter(topic => topic.category === activeCategory);
 
   return (
-    <section className="topics-section">
+    <section id="topics-section" className="topics-section">
       <div className="topics-container">
         <div className="topics-header">
           <p className="topics-subtitle">AREAS OF INTEREST</p>

@@ -1,6 +1,5 @@
 // Main Components
 export { default as AboutMe } from './AboutMe/AboutMe';
-export { default as AudioIndicator } from './AudioIndicator/AudioIndicator';
 export { default as BlogGrid } from './BlogGrid/BlogGrid';
 export { default as BlogMightLike } from './BlogMightLike/blogmightlike';
 export { default as BlogPost } from './BlogPost/BlogPost';

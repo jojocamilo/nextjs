@@ -98,8 +98,8 @@ const PortfolioCarousel = () => {
     },
     {
       id: 3,
-      type: 'video',
-      src: '/assets/videos/tech.mp4',
+      type: 'image',
+      src: '/assets/images/landing/2023.jpg',
       title: 'Looking for the Next Challenge',
       subtitle: "Let's Create Something Together",
       eventDetails: '18 november 2025 | SGU Prominence Tower campus, Alam Sutera, Tangerang, Indonesia',

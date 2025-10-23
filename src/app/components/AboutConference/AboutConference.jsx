@@ -14,7 +14,7 @@ const topicsList = [
 // Nama komponen tetap AboutConference
 const AboutConference = () => {
   return (
-    <section className="about-conf-section">
+    <section id="about-conference" className="about-conf-section">
       <div className="about-conf-container">
         <div className="about-conf-header">
           <p className="about-conf-subtitle">THE ANNUAL CONFERENCE</p>

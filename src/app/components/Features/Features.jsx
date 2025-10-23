@@ -115,7 +115,7 @@ const Card = ({ src, Nama, title, description, className, buttonHref, isGif }) =
             className="card-home-features-button"
             aria-label={`View ${title} project`}
           >
-            View Project
+            About
             <ArrowUpRight className="card-home-features-button-icon" size={16} />
           </a>
         </div>

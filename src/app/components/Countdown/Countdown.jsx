@@ -43,7 +43,7 @@ const Countdown = () => {
   ];
 
   return (
-    <section className="countdown-section">
+  <section id="countdown-section" className="countdown-section">
       <div className="countdown-container">
         <h2 className="countdown-title">The Conference | 18 November 2025</h2>
         <p className="countdown-subtitle">

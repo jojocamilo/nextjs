@@ -326,7 +326,7 @@
   overflow: hidden;
   height: 100%;
   border-radius: var(--border-radius-3xl);
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+  background: #00296b;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all var(--transition-normal);
@@ -416,12 +416,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: var(--spacing-xl);
-  background: linear-gradient(
-    135deg,
-    rgba(30, 41, 59, 0.7) 0%,
-    rgba(15, 23, 42, 0.8) 50%,
-    rgba(30, 41, 59, 0.9) 100%
-  );
+  background: #00296b;
   border-radius: inherit;
 }
 
@@ -474,16 +469,12 @@
 }
 
 .card-home-features-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
   margin: var(--spacing-md) 0;
   padding: var(--spacing-md) var(--spacing-lg);
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.1),
-    rgba(139, 92, 246, 0.1)
-  );
+  background: rgba(255, 255, 255, 0.1);
   border-radius: var(--border-radius-lg);
   backdrop-filter: blur(8px);
   border-left: 3px solid var(--color-primary);
@@ -499,11 +490,7 @@
 
 .card-home-features-wrapper:hover .card-home-features-description {
   color: rgba(255, 255, 255, 0.95);
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.15),
-    rgba(139, 92, 246, 0.15)
-  );
+  background: rgba(255, 255, 255, 0.15);
   border-left-color: var(--color-primary-light);
   box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15), 
               0 3px 6px -1px rgba(0, 0, 0, 0.1);

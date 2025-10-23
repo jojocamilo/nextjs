@@ -1,9 +1,14 @@
 .infinite-carousel-container {
   overflow: hidden;
   position: relative;
-  max-width: 650px;
-  margin: 0 auto;
-  padding: 1rem 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  /* full-width white background bar */
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .infinite-carousel-track {
@@ -18,11 +23,12 @@
 
 .infinite-carousel-slide {
   flex: 0 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
+  background: transparent;
 }
 
 .infinite-carousel-image {

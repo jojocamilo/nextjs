@@ -29,7 +29,7 @@ export default function ClientLayout({ children, enablePreloader = false }) {
       {/* Show preloader if enabled and app is not loaded */}
       {enablePreloader && <Preload enablePreloader={enablePreloader} />}
       <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-      <Mouse />
+      {/* <Mouse /> */}
       <main>{children}</main>
     </>
   );

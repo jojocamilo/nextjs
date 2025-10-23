@@ -21,10 +21,7 @@ const preloadAssets = [
     type: 'component',
     path: () => import('../../components/BlogGrid/BlogGrid.jsx'),
   },
-  {
-    type: 'component',
-    path: () => import('../../components/AudioIndicator/AudioIndicator.jsx'),
-  },
+  // AudioIndicator removed from preload
   {
     type: 'component',
     path: () => import('../../components/Buttons/Button1.jsx'),

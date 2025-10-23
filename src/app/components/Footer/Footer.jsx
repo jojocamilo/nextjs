@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Dribbble, Mail } from 'lucide-react';
+import { Linkedin, Dribbble } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -22,28 +22,18 @@ const Footer = () => {
 
           <div className="footer-socials">
             <a
-              href=""
+              href="https://www.linkedin.com/school/swiss-german-university/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="footer-icon" />
+              <Linkedin className="footer-icon" />
             </a>
             <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin className="" />
-            </a>
-            <a
-              href=""
+              href="https://sgu.ac.id/id/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Dribbble className="footer-icon" />
-            </a>
-            <a href="">
-              <Mail className="footer-icon" />
             </a>
           </div>
         </div>

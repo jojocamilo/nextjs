@@ -41,7 +41,7 @@ const ImportantDates = () => {
   today.setHours(0, 0, 0, 0);
 
   return (
-    <section className="dates-section">
+    <section id="dates-section" className="dates-section">
       <div className="dates-container">
         <div className="dates-header">
           <p className="dates-subtitle">TIMELINE</p>

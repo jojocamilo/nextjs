@@ -6,6 +6,14 @@
   background-color: var(--dark-mode);
 }
 
+/* Full-width white stripe for partner logos */
+.company-carousel-section {
+  width: 100%;
+  margin: 0;
+  padding: 0; /* remove gaps that reveal page background */
+  background: #ffffff; /* ensure white bar */
+}
+
 /* Home Page Styles */
 .dark-mode .page.home-page {
   background-color: var(--light-mode);

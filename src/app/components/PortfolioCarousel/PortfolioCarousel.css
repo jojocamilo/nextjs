@@ -171,11 +171,12 @@ html.dark-mode {
   left: 0;
   width: 100%;
   height: 100%;
+  /* lighter overlay so media is still visible */
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.45) 100%
   );
   z-index: 1;
 }
@@ -183,6 +184,15 @@ html.dark-mode {
 /* ===================================
    Content
    =================================== */
+.landing-carousel__slide--active .landing-carousel__overlay {
+  /* make overlay slightly more transparent on the active slide */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.18) 50%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
 .landing-carousel__content {
   position: absolute;
   top: 0;
@@ -194,26 +204,31 @@ html.dark-mode {
   justify-content: center;
   z-index: 2;
   padding: var(--spacing-2xl);
+  /* Keep content transparent so the media (image/video) remains visible */
   background: transparent;
+  color: inherit;
 }
 
 .landing-carousel__text {
   text-align: center;
   max-width: 900px;
-  color: white;
+  /* Make the hero card transparent so background media shows through */
   background: transparent;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: none;
+  color: rgba(255,255,255,0.95);
 }
 
 .landing-carousel__subtitle {
   font-size: var(--font-size-lg);
-  color: #94a3b8;
+  color: rgba(255,255,255,0.85);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: var(--spacing-md);
   opacity: 1;
   transform: translateY(0);
   font-weight: 500;
-  background-color: transparent;
 }
 
 .landing-carousel__title {
@@ -221,19 +236,15 @@ html.dark-mode {
   font-weight: 800;
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-lg);
-  background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: white;
   opacity: 1;
   transform: translateY(0);
-  background-color: transparent;
 }
 
 .landing-carousel__description {
   font-size: var(--font-size-xl);
   line-height: var(--line-height-relaxed);
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.9);
   margin-bottom: var(--spacing-2xl);
   opacity: 1;
   transform: translateY(0);
@@ -241,7 +252,6 @@ html.dark-mode {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  background-color: transparent;
 }
 
 @keyframes slideInUp {
@@ -259,27 +269,23 @@ html.dark-mode {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  padding: 12px 20px;
+  /* Make CTA stand out on white background */
+  background: linear-gradient(135deg, var(--accent-primary, #3b82f6), var(--accent-secondary, #8b5cf6));
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 12px;
   color: white;
   font-size: var(--font-size-base);
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 0;
   transform: translateY(20px);
   animation: slideInUp 1s ease-out 1.2s forwards;
   position: relative;
   overflow: hidden;
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
 /* Hauptglanz-Effekt (Spotlight) */
@@ -333,16 +339,9 @@ html.dark-mode {
 
 /* Hover-Zustand */
 .landing-carousel__cta:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-4px);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.3),
-    0 8px 32px rgba(59, 130, 246, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  filter: brightness(1.02);
 }
 
 .landing-carousel__cta:hover::before {

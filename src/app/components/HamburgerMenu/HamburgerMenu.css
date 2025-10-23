@@ -11,7 +11,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 999;
-  cursor: pointer;
+  cursor: default;
   transition: opacity 0.2s ease;
 }
 

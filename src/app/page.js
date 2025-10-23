@@ -24,9 +24,11 @@ import ContactBanner from './components/ContactBanner/ContactBanner'; // 1. Gant
 const Home = () => {
   return (
     <div className="page home-page">
-      <PortfolioCarousel />
-            {/* <TestimonialsGrid /> */}
-      <CompanyCarousel />
+  <PortfolioCarousel />
+    {/* <TestimonialsGrid /> */}
+  <section className="company-carousel-section">
+    <CompanyCarousel />
+  </section>
       <CallToAction />
       <AboutConference />
 

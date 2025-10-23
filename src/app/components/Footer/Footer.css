@@ -12,7 +12,7 @@ About Me socials Styles
 .about-me-socials a {
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #ffffff26;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ About Me socials Styles
 
 .about-me-socials a:hover {
   border-color: #3ecf8e;
-  background: rgba(62, 207, 142, 0.1);
+  background: #3ecf8e1a;
 }
 
 .about-me-icon {
@@ -38,13 +38,13 @@ About Me socials Styles
 
 /* Footer Styles mit Social Icons */
 .footer {
-  background-color: var(--dark-mode);
+  background-color: #ffffff;
   padding: 5rem 1rem 1.5rem;
   position: relative;
 }
 
 .dark-mode .footer {
-  background-color: var(--light-mode);
+  background-color: #ffffff;
 }
 
 .footer::before {
@@ -55,7 +55,7 @@ About Me socials Styles
   transform: translateX(-50%);
   width: 50%;
   height: 1px;
-  background-color: #ffffff1a;
+  background-color: #e5e5e5;
 }
 
 .footer-content {
@@ -80,7 +80,7 @@ About Me socials Styles
 
 .footer-copyright {
   font-size: 0.9rem;
-  opacity: 0.7;
+  color: #666666;
 }
 
 .footer-legal {
@@ -89,7 +89,7 @@ About Me socials Styles
 }
 
 .footer-legal a {
-  color: #ccc;
+  color: #666666;
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s ease;
@@ -103,7 +103,7 @@ About Me socials Styles
 .footer-socials a {
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -113,13 +113,13 @@ About Me socials Styles
 
 .footer-socials a:hover {
   border-color: #3ecf8e;
-  background: rgba(62, 207, 142, 0.1);
+  background: #3ecf8e1a;
 }
 
 .footer-socials .footer-icon {
   width: 20px;
   height: 20px;
-  color: #94a3b8;
+  color: #666666;
   transition: all 0.3s ease;
 }
 

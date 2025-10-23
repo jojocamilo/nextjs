@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Volume2 } from 'lucide-react';
 import './AudioIndicator.css';
 
 const AudioIndicator = ({
@@ -118,9 +118,10 @@ const AudioIndicator = ({
                 exit={{ opacity: 0, rotate: -90 }}
                 transition={{ duration: 0.2 }}
               >
-                <VolumeX
+                {/* Show the same icon but visually muted when paused */}
+                <Volume2
                   size={18}
-                  className="text-gray-600 dark:text-gray-300"
+                  className="text-gray-400 dark:text-gray-500 opacity-60"
                 />
               </motion.div>
             )}
