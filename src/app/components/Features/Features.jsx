@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import './Features.css';
 
 // Prop isGif tetap ada untuk backward compatibility
-const Card = ({ src, Nama, title, description, className, buttonHref, isGif }) => {
+const Card = ({ src, Nama, title, description, className, buttonHref, isGif, badge }) => {
   const [isClient, setIsClient] = useState(false);
   const wrapperRef = useRef(null);
   const videoRef = useRef(null);
@@ -102,6 +102,9 @@ const Card = ({ src, Nama, title, description, className, buttonHref, isGif }) =
 
         <div className="card-home-features-content">
           <div className="card-home-features-text">
+            {badge && (
+              <div className="card-home-features-badge">{badge}</div>
+            )}
             {Nama && (
               <h2 className="card-home-features-name">{Nama}</h2>
             )}
@@ -140,6 +143,7 @@ const CardHomeFeatures = () => {
           <Card
             src="/assets/images/landing/Bapak.jpg"
             Nama="Dr. Nashrudin Ismail, S.T., MM."
+            badge="Keynote speaker"
             title="General Manager People Partner and Growth PT Aplikanusa Lintasarta"
             description="Integrating Emerging Technologies with Human Capital for Sustainable Transformation"
             className="card-home-features-large"

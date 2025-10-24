@@ -65,6 +65,18 @@ const Guidelines = () => {
               <div className="card-icon"><item.icon size={28} /></div>
               <h3 className="card-title">{item.title}</h3>
               <div className="card-description">{item.description}</div>
+              {item.id === 'submission' && (
+                <div className="card-actions">
+                  <a
+                    className="submit-paper-button"
+                    href="https://forms.gle/ZdVX3UoB4FVaBiT2A"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Submit Paper
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </div>
