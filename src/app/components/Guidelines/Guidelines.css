@@ -269,3 +269,21 @@
   background: #3730a3;
   transform: translateY(-1px);
 }
+
+/* Download button for format card */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #4f46e5; /* indigo-600 */
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, transform 0.05s ease, box-shadow 0.2s ease;
+}
+.download-btn:hover { background-color: #4338ca; /* indigo-700 */ }
+.download-btn:active { transform: translateY(1px); }
+.download-btn:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(79,70,229,0.35); }

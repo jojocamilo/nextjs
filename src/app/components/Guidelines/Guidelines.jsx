@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react'; // Untuk saat ini, kita bisa buat tanpa state jika tidak ada interaksi klik
-import { Mail, FileText, Presentation, Library, Languages, BadgeDollarSign } from 'lucide-react';
+import { Mail, FileText, Presentation, Library, Languages, BadgeDollarSign, Download } from 'lucide-react';
 import './Guidelines.css';
 
 const guidelinesData = [
@@ -65,6 +65,19 @@ const Guidelines = () => {
               <div className="card-icon"><item.icon size={28} /></div>
               <h3 className="card-title">{item.title}</h3>
               <div className="card-description">{item.description}</div>
+              {item.id === 'format' && (
+                <div className="card-actions">
+                  <a
+                    className="download-btn"
+                    href="/assets/ACMIT_WordTemplate_2025.docx"
+                    download
+                    aria-label="Download paper template (DOCX)"
+                  >
+                    <Download size={18} aria-hidden="true" />
+                    <span>Download Template</span>
+                  </a>
+                </div>
+              )}
               {item.id === 'submission' && (
                 <div className="card-actions">
                   <a
