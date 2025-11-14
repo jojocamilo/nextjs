@@ -3,18 +3,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDarkMode } from '../../contexts/DarkModeContext';
-import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 // import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 // AudioIndicator removed
-import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
 
   const navbarRef = useRef(null);
@@ -29,10 +26,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, []);
+
 
   
 
@@ -41,7 +35,7 @@ const Navbar = () => {
   { href: '/', label: 'Home' },
   { href: '#about-conference', label: 'About' },
   { href: '#countdown-section', label: 'Countdown' },
-    { href: '#ScrollToFeatures', label: 'Presenters' },
+    { href: '#ScrollToFeatures', label: 'Speaker' },
     { href: '#guidelines-section', label: 'Guideline' },
     { href: '#dates-section', label: 'Timeline' },
     { href: '#topics-section', label: 'Topics' },
@@ -110,8 +104,6 @@ const Navbar = () => {
                         e.preventDefault();
                         const el = document.querySelector(item.href);
                         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        // Close mobile menu if open
-                        setIsMobileMenuOpen(false);
                       }
                     }}
                     className={`${styles.navLink} ${
@@ -160,53 +152,10 @@ const Navbar = () => {
               </Link>
             </motion.div>
 
-            {/* Mobile Controls */}
-            <div className={styles.mobileControls}>
-              <motion.button
-                className={`${styles.mobileMenuButton} ${
-                  isDarkMode
-                    ? styles.mobileMenuButtonDark
-                    : styles.mobileMenuButtonLight
-                }`}
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                whileTap={{ scale: 0.95 }}
-              >
-                <AnimatePresence mode="wait">
-                  {isMobileMenuOpen ? (
-                    <motion.div
-                      key="close"
-                      className={`${styles.menuIcon} ${styles.close}`}
-                      initial={{ rotate: -90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: 90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <X size={20} />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="menu"
-                      className={`${styles.menuIcon} ${styles.menu}`}
-                      initial={{ rotate: 90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: -90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Menu size={20} />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.button>
-            </div>
+
           </div>
         </div>
       </motion.header>
-
-      {/* Hamburger Menu */}
-      <HamburgerMenu
-        isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-      />
     </>
   );
 };
