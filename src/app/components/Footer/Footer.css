@@ -95,6 +95,28 @@ About Me socials Styles
   transition: color 0.3s ease;
 }
 
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.footer-contact svg {
+  color: #3ecf8e;
+}
+
+.footer-contact a {
+  color: #666666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #3ecf8e;
+}
+
 .footer-socials {
   display: flex;
   gap: 1.5rem;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Dribbble } from 'lucide-react';
+import { Linkedin, Dribbble, Phone } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,14 +9,9 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-left">
             <span className="footer-copyright">Swiss German University</span>
-            <span className="footer-legal">
-              <a
-                href="https://github.com/GylanSalih/NextJS-Portify/tree/main"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {/* Testing lorem ipssum */}
-              </a>
+            <span className="footer-contact">
+              <Phone size={16} />
+              <a href="tel:+628111771983">+62 811 1771 983 (Dian Karmila)</a>
             </span>
           </div>
 

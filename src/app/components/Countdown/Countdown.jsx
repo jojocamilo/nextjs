@@ -2,7 +2,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Download } from 'lucide-react';
 import './Countdown.css'; // <-- Pastikan import CSS ini ada kembali
 
 const Countdown = () => {
@@ -64,17 +63,6 @@ const Countdown = () => {
               )}
             </React.Fragment>
           ))}
-        </div>
-        <div className="countdown-actions">
-          <a
-            href="/assets/Rundown_ACMIT2025.pdf"
-            download
-            className="rundown-btn"
-            aria-label="Download ACMIT 2025 Rundown PDF"
-          >
-            <Download size={20} aria-hidden="true" />
-            <span>Download Rundown</span>
-          </a>
         </div>
       </div>
     </section>

@@ -19,6 +19,8 @@ import Guidelines from './components/Guidelines/Guidelines';
 import ImportantDates from './components/ImportantDates/ImportantDates'; // 1. Impor
 import TopicExplorer from './components/TopicExplorer/TopicExplorer'; // 1. Impor
 import AboutConference from './components/AboutConference/AboutConference';
+import RundownTimeline from './components/RundownTimeline/RundownTimeline';
+import ProceedingSection from './components/ProceedingSection/ProceedingSection';
 
 import ContactBanner from './components/ContactBanner/ContactBanner'; // 1. Ganti nama import
 const Home = () => {
@@ -34,10 +36,12 @@ const Home = () => {
 
       {/* 2. Selipkan komponen di sini */}
       <Countdown />
+      <RundownTimeline />
       <Features />
       <Guidelines />
       <ImportantDates />
       <TopicExplorer />
+      <ProceedingSection />
       <ContactBanner />
       {/* <FeaturesInteractive /> */}
       {/* <ConferenceSchedule /> */}
