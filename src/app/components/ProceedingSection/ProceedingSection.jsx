@@ -21,30 +21,12 @@ const ProceedingSection = () => {
             </p>
             <div className="proceeding-buttons">
               <a 
-                href="https://docs.google.com/document/d/1AAF8_OI8VOL852nGiGqeZvMiJplGCa88/edit?usp=sharing&ouid=108070640064500548693&rtpof=true&sd=true" 
+                href="https://proceedings.sgu.ac.id/acmit/index.php?journal=acmit" 
                 className="proceeding-button"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>ACMIT 2020 Proceedings</span>
-                <ExternalLink size={20} />
-              </a>
-              <a 
-                href="https://docs.google.com/document/d/1otDwJc3a2C-E4gYDXbJ-hcUn4oOr8pDn/edit?usp=sharing&ouid=108070640064500548693&rtpof=true&sd=true" 
-                className="proceeding-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>ACMIT 2021 Proceedings</span>
-                <ExternalLink size={20} />
-              </a>
-              <a
-                href="https://docs.google.com/document/d/11fWk74oNYSiZoFKUUjeh7KA633QTzJTv/edit?usp=sharing&ouid=108070640064500548693&rtpof=true&sd=true"
-                className="proceeding-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>ACMIT 2022 Proceedings</span>
+                <span>ACMIT Proceedings</span>
                 <ExternalLink size={20} />
               </a>
             </div>
